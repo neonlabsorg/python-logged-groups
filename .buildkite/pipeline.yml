@@ -1,3 +1,7 @@
 steps:
-  - label: "Example Test"
-    command: echo "Hello!"
+  - label: "Example Test 1"
+    command: sleep 15 && echo "check parallel execution 1"
+
+  - label: "Example Test 2"
+    command: sleep 15 && echo "check parallel execution 2"
+
