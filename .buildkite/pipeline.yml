@@ -1,7 +1,7 @@
 steps:
 
   - label: "Example Test 1"
-    command: echo check parallel execution 1
+    command: sleep 2 && echo check parallel execution 1
     priority: 1
 
   - label: "Example Test 2"
