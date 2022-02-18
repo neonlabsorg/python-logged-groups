@@ -2,6 +2,8 @@ steps:
   - label: "The other pipeline"
     command: buildkite-agent pipeline upload .buildkite/other-activity.yml
 
+  - block: ":shipit: Release"
+    
   - label: "Example Test 1"
     command: echo "check parallel execution 1"
 
