@@ -1,7 +1,7 @@
 steps:
 
   - label: "Example Test 1"
-    command: sleep 5 && echo check parallel execution 1
+    command: echo "draft?:" build.pull_request.draft
     priority: 1
 
   - label: "Example Test 2"
