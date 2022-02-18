@@ -6,5 +6,8 @@ steps:
 
   - label: "Example Test 1"
     command: echo "check parallel execution 1"
+    priority: 2
 
-
+  - label: "Example Test 2"
+    command: echo "check parallel execution 2"
+    priority: 1
