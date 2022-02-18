@@ -7,3 +7,4 @@ steps:
   - label: "Example Test 2"
     command: sleep 5 && echo check parallel execution 2
     priority: 3
+    skip: "My reason"
