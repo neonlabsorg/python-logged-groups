@@ -1,7 +1,8 @@
 steps:
-  - label: "Example Test 1"
-    command: sleep 15 && echo "check parallel execution 1"
+  - label: "The other pipeline"
+    command: buildkite-agent pipeline upload .buildkite/other-activity.yml
 
-  - label: "Example Test 2"
-    command: sleep 15 && echo "check parallel execution 2"
+  - label: "Example Test 1"
+    command: "check parallel execution 1"
+
 

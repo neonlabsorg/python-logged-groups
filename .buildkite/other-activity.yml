@@ -1,0 +1,3 @@
+steps:
+  - label: "Example Test 2"
+    command: echo "check parallel execution 2"
