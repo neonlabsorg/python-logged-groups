@@ -3,9 +3,13 @@ steps:
     steps:
       - label: "Example Test 1"
         command: sleep 40 && echo "draft?:" build.pull_request.draft
+        agents:
+          queue: "testing"
 
   - group: "group 2"
     steps:
       - label: "Example Test 2"
         command: sleep 40 && echo check parallel execution 2 - $(buildkite-agent meta-data get release-name)
         priority: 3
+        agents:
+          queue: "testing"
