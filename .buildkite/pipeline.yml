@@ -10,6 +10,7 @@ steps:
     fields:
       - text: "Release Name"
         key: "release-name"
+    blocked_state: running
 
   - label: "Example Test 2"
     command: sleep 5 && echo check parallel execution 2 - $(buildkite-agent meta-data get release-name)
