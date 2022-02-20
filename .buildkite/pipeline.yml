@@ -1,17 +1,11 @@
 steps:
+  - group: "group 1"
+    steps:
+      - label: "Example Test 1"
+        command: sleep 10 && echo "draft?:" build.pull_request.draft
 
-  - label: "Example Test 1"
-    command: echo "draft?:" build.pull_request.draft
-    if: !build.pull_request.draft
-    priority: 1
-
-  - block: "Release"
-    prompt: "Fill out the details for release"
-    fields:
-      - text: "Release Name"
-        key: "release-name"
-    blocked_state: running
-
-  - label: "Example Test 2"
-    command: sleep 5 && echo check parallel execution 2 - $(buildkite-agent meta-data get release-name)
-    priority: 3
+  - group: "group 2"
+    steps:
+      - label: "Example Test 2"
+        command: sleep 10 && echo check parallel execution 2 - $(buildkite-agent meta-data get release-name)
+        priority: 3
