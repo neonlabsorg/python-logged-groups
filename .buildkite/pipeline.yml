@@ -2,10 +2,10 @@ steps:
   - group: "group 1"
     steps:
       - label: "Example Test 1"
-        command: sleep 10 && echo "draft?:" build.pull_request.draft
+        command: sleep 40 && echo "draft?:" build.pull_request.draft
 
   - group: "group 2"
     steps:
       - label: "Example Test 2"
-        command: sleep 10 && echo check parallel execution 2 - $(buildkite-agent meta-data get release-name)
+        command: sleep 40 && echo check parallel execution 2 - $(buildkite-agent meta-data get release-name)
         priority: 3
