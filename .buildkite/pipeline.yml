@@ -5,7 +5,12 @@ steps:
     if: !build.pull_request.draft
     priority: 1
 
+  - block: "Release"
+    prompt: "Fill out the details for release"
+    fields:
+      - text: "Release Name"
+        key: "release-name"
+
   - label: "Example Test 2"
     command: sleep 5 && echo check parallel execution 2
     priority: 3
-    skip: "My reason"
