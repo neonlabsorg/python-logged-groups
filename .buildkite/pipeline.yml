@@ -1,7 +1,7 @@
 steps:
 
   - label: "Example Test 1"
-    command: echo Buildkite source - $BUILDKITE_SOURCE '- NEON_EVM_BRANCH:' $(buildkite-agent meta-data get "evm_loader_branch" --default "latest")
+    command: echo Buildkite source - $BUILDKITE_SOURCE '- NEON_EVM_BRANCH:' $(buildkite-agent meta-data get "is_for_full_test_suite" --default null)
     if: !build.pull_request.draft
     priority: 1
 
