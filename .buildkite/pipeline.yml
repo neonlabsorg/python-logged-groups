@@ -1,7 +1,7 @@
 steps:
 
   - label: "Example Test 1"
-    command: echo Buildkite source - $BUILDKITE_SOURCE
+    command: echo Buildkite source - $BUILDKITE_SOURCE '- NEON_EVM_BRANCH:' {EVM_LOADER_BRANCH:-latest}
     if: !build.pull_request.draft
     priority: 1
 
