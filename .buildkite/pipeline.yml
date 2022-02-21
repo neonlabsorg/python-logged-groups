@@ -2,14 +2,16 @@ steps:
   - group: "group 1"
     steps:
       - label: "Example Test 1"
-        command: sleep 40 && echo "draft?:" build.pull_request.draft
+        command: sleep 5 && echo "draft?:" build.pull_request.draft
         agents:
           queue: "testing"
+      - label: "Setting up meta"
+        command: buildkite-agent meta-data set "release-version" "1.1"
 
   - group: "group 2"
     steps:
       - label: "Example Test 2"
-        command: sleep 40 && echo check parallel execution 2 - $(buildkite-agent meta-data get release-name)
+        command: sleep 5 && echo check parallel execution 2 - $(buildkite-agent meta-data get release-version)
         priority: 3
         agents:
           queue: "testing"
