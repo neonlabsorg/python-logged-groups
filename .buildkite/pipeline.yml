@@ -1,7 +1,7 @@
 steps:
 
   - label: "Example Test 1"
-    command: echo "draft?:" build.pull_request.draft
+    command: echo Buildkite source - $BUILDKITE_SOURCE
     if: !build.pull_request.draft
     priority: 1
 
