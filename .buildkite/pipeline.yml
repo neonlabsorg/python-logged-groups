@@ -1,7 +1,7 @@
 steps:
 
   - label: "Example Test 1"
-    command: echo Buildkite source - $BUILDKITE_SOURCE '- NEON_EVM_BRANCH:' $(buildkite-agent meta-data get "is_draft_pull_requeset" --default null)
+    command: echo Buildkite source - $BUILDKITE_SOURCE '- NEON_EVM_BRANCH:' $(buildkite-agent meta-data get "draft" --default null)
     if: !build.pull_request.draft
     priority: 1
 
