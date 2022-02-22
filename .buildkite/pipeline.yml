@@ -10,17 +10,11 @@ steps:
     agents:
       queue: "testing"
 
-#  - label: "Check if the full test suite should be processed"
-#    key: "to-substitute-label"
-#    if: |
-#        (build.pull_request.base_branch == "develop" && !build.pull_request.draft)
-#        || $(buildkite-agent meta-data get "full_test_suite" --job ${NEON_EVM_JOB_ID}) == "true"
-#    commands:
-#      - echo processing full test suite MYENV -  ${MYENV}
-#
-#  - label: "Echo env FULL_TEST_SUITE"
-#    commands:
-#      - echo "full_test_suite:" ${FULL_TEST_SUITE} -
-#      - echo BUILDKITE_JOB_ID - ${BUILDKITE_JOB_ID}
-#    agents:
-#      queue: "testing"
+  - label: "Check if the full test suite is to be run"
+    key: "to-substitute-label"
+    if: |
+        (build.pull_request.base_branch == "develop" && !build.pull_request.draft)
+        || (build.source == "trigger_job" && build.env("EVM_LOADER_FULL_TEST_SUITE") == "true")
+    commands:
+      - echo RUN FULL TEST SUITE
+
