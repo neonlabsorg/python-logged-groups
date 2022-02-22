@@ -2,8 +2,8 @@ steps:
 
   - label: "Example Test 1"
     commands:
-      - "echo $BUILDKITE_SOURCE: ${BUILDKITE_SOURCE} '- NEON_EVM_BRANCH:' $(buildkite-agent meta-data get \"evm_loader_develop_not_draft_pr\" --default \"false\")"
-      - "echo ${EVM_LOADER_DEVELOP_NOT_DRAFT_PR}"
+      - "echo BUILDKITE_SOURCE: ${BUILDKITE_SOURCE} - $(buildkite-agent meta-data get \"evm_loader_develop_not_draft_pr\" --default \"false\")"
+      - "echo EVM_LOADER_DEVELOP_NOT_DRAFT_PR: ${EVM_LOADER_DEVELOP_NOT_DRAFT_PR}"
     agents:
       queue: "testing"
 
