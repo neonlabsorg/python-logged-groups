@@ -4,12 +4,12 @@ steps:
 #    agents:
 #      queue: "testing"
 
-  - label: "Example Test 1"
+  - label: "Echo meta evm_loader_branch"
     command: echo evm_loader_branch - $(buildkite-agent meta-data get "evm_loader_branch" --default "false")
     agents:
       queue: "testing"
 
-  - label: "Example Test 2"
+  - label: "Echo env FULL_TEST_SUITE"
     command: echo "full_test_suite:" ${FULL_TEST_SUITE}
     agents:
       queue: "testing"
