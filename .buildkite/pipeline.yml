@@ -6,7 +6,6 @@ steps:
       - echo EVM_LOADER_REVISION - ${EVM_LOADER_REVISION}
       - echo EVM_LOADER_BRANCH - ${EVM_LOADER_BRANCH}
       - echo SOLANA_REVISION - ${SOLANA_REVISION}
-      - echo GGBB - ${GGBB}
     agents:
       queue: "testing"
 
@@ -17,4 +16,5 @@ steps:
         || (build.source == "trigger_job" && build.env("EVM_LOADER_FULL_TEST_SUITE") == "true")
     commands:
       - echo RUN FULL TEST SUITE
+      - echo "EVM_LOADER_FULL_TEST_SUITE:\ ${EVM_LOADER_FULL_TEST_SUITE}"
 
