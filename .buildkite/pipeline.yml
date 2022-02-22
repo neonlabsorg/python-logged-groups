@@ -10,8 +10,7 @@ steps:
       queue: "testing"
 
   - label: "Example Test 2"
-    command: sleep 5 && echo check parallel execution 2
+    command: echo "full_test_suite:" ${FULL_TEST_SUITE}
     priority: 3
-    skip: "My reason"
     agents:
       queue: "testing"
