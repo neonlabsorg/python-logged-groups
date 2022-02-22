@@ -14,5 +14,5 @@ steps:
         (build.pull_request.base_branch == "develop" && !build.pull_request.draft) ||
         (build.source == "trigger_job" && build.env("EVM_LOADER_FULL_TEST_SUITE") == "true")
     commands:
-      - echo "EVM_LOADER_FULL_TEST_SUITE:\ ${EVM_LOADER_FULL_TEST_SUITE}"
+      - echo "EVM_LOADER_FULL_TEST_SUITE:" ${EVM_LOADER_FULL_TEST_SUITE}
 
