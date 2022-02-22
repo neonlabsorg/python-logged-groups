@@ -1,11 +1,15 @@
 steps:
 
   - label: "Example Test 1"
-    command: echo Buildkite source - $BUILDKITE_SOURCE '- NEON_EVM_BRANCH:' $(buildkite-agent meta-data get "draft" --default null)
-    if: !build.pull_request.draft
-    priority: 1
+    commands:
+      - "echo $BUILDKITE_SOURCE: ${BUILDKITE_SOURCE} '- NEON_EVM_BRANCH:' $(buildkite-agent meta-data get \"evm_loader_develop_not_draft_pr\" --default \"false\")"
+      - "echo ${EVM_LOADER_DEVELOP_NOT_DRAFT_PR}"
+    agents:
+      queue: "testing"
 
   - label: "Example Test 2"
     command: sleep 5 && echo check parallel execution 2
     priority: 3
     skip: "My reason"
+    agents:
+      queue: "testing"
