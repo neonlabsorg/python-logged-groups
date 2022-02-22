@@ -10,6 +10,7 @@ steps:
       - echo BUILDKITE_JOB_ID - ${BUILDKITE_JOB_ID}
       - echo BUILDKITE_TRIGGERED_FROM_BUILD_ID - ${BUILDKITE_TRIGGERED_FROM_BUILD_ID}
       - echo NEON_EVM_JOB_ID - ${NEON_EVM_JOB_ID}
+      - echo $(buildkite-agent meta-data get "full_test_suite" --job ${NEON_EVM_JOB_ID} --default "false")
     agents:
       queue: "testing"
 
