@@ -18,8 +18,8 @@ steps:
 
   - label: "Check if the full test suite should be processed"
     key: "to-substitute-label"
-    if: |
-        (build.pull_request.base_branch == "develop" && !build.pull_request.draft)
+#    if: |
+#        (build.pull_request.base_branch == "develop" && !build.pull_request.draft)
 #        || (build.source == "trigger_job" && build.env(""))
     commands:
       - echo processing full test suite
