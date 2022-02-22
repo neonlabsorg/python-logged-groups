@@ -1,10 +1,6 @@
 env:
   GGBB: $(buildkite-agent meta-data get "full_test_suite" --job ${NEON_EVM_JOB_ID}  --default "false")
 steps:
-#  - label: "define if for full test suite"
-#    command: buildkite-agent meta-data set "full_test_suite" "true"
-#    agents:
-#      queue: "testing"
 
   - label: "Echo meta evm_loader_branch"
     commands:
@@ -14,14 +10,14 @@ steps:
       - echo NEON_EVM_JOB_ID - ${NEON_EVM_JOB_ID}
     agents:
       queue: "testing"
-
-  - label: "Check if the full test suite should be processed"
-    key: "to-substitute-label"
-    if: |
-        (build.pull_request.base_branch == "develop" && !build.pull_request.draft)
-        || $(buildkite-agent meta-data get "full_test_suite" --job ${NEON_EVM_JOB_ID}) == "true"
-    commands:
-      - echo processing full test suite MYENV -  ${MYENV}
+#
+#  - label: "Check if the full test suite should be processed"
+#    key: "to-substitute-label"
+#    if: |
+#        (build.pull_request.base_branch == "develop" && !build.pull_request.draft)
+#        || $(buildkite-agent meta-data get "full_test_suite" --job ${NEON_EVM_JOB_ID}) == "true"
+#    commands:
+#      - echo processing full test suite MYENV -  ${MYENV}
 
   - label: "Echo env FULL_TEST_SUITE"
     commands:
