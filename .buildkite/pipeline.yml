@@ -2,9 +2,8 @@ steps:
 
   - label: "Echo meta evm_loader_branch"
     commands:
-      - echo EVM_LOADER_FULL_TEST_SUITE - ${EVM_LOADER_FULL_TEST_SUITE}
-      - echo EVM_LOADER_REVISION - ${EVM_LOADER_REVISION}
-      - echo EVM_LOADER_BRANCH - ${EVM_LOADER_BRANCH}
+      - echo EVM_LOADER_REVISION - ${EVM_LOADER_REVISION:-latest}
+      - echo EVM_LOADER_BRANCH - ${EVM_LOADER_BRANCH:-develop}
       - echo SOLANA_REVISION - ${SOLANA_REVISION}
     agents:
       queue: "testing"
@@ -15,6 +14,5 @@ steps:
         (build.pull_request.base_branch == "develop" && !build.pull_request.draft) ||
         (build.source == "trigger_job" && build.env("EVM_LOADER_FULL_TEST_SUITE") == "true")
     commands:
-      - echo RUN FULL TEST SUITE
       - echo "EVM_LOADER_FULL_TEST_SUITE:\ ${EVM_LOADER_FULL_TEST_SUITE}"
 
