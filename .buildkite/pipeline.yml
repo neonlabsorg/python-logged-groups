@@ -1,8 +1,8 @@
 steps:
-  - label: "define if for full test suite"
-    command: buildkite-agent meta-data set "full_test_suite" "true"
-    agents:
-      queue: "testing"
+#  - label: "define if for full test suite"
+#    command: buildkite-agent meta-data set "full_test_suite" "true"
+#    agents:
+#      queue: "testing"
 
   - label: "Example Test 1"
     command: echo "full_test_suite:" $(buildkite-agent meta-data get "full_test_suite" --default "false")
