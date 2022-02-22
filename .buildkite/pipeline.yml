@@ -5,6 +5,7 @@ steps:
       - echo EVM_LOADER_REVISION - ${EVM_LOADER_REVISION:-latest}
       - echo EVM_LOADER_BRANCH - ${EVM_LOADER_BRANCH:-develop}
       - echo SOLANA_REVISION - ${SOLANA_REVISION}
+      - echo "EVM_LOADER_FULL_TEST_SUITE:" ${EVM_LOADER_FULL_TEST_SUITE}
     agents:
       queue: "testing"
 
