@@ -2,11 +2,11 @@ steps:
 
   - label: "Echo meta evm_loader_branch"
     commands:
-      - echo NEON_EVM_REVISION: ${EVM_LOADER_REVISION:-latest}
-      - echo NEON_EVM_BRANCH: ${EVM_LOADER_BRANCH:-develop}
-      - echo NEON_EVM_REPO: ${NEON_EVM_REPO}
-      - echo SOLANA_REVISION: ${SOLANA_REVISION}
-      - echo "EVM_LOADER_FULL_TEST_SUITE:" ${EVM_LOADER_FULL_TEST_SUITE}
+      - "echo NEON_EVM_REVISION: ${EVM_LOADER_REVISION:-latest}"
+      - "echo NEON_EVM_BRANCH: ${EVM_LOADER_BRANCH:-develop}"
+      - "echo NEON_EVM_REPO: ${NEON_EVM_REPO}"
+      - "echo SOLANA_REVISION: ${SOLANA_REVISION}"
+      - "echo EVM_LOADER_FULL_TEST_SUITE: ${EVM_LOADER_FULL_TEST_SUITE}"
     agents:
       queue: "testing"
 
