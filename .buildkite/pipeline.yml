@@ -2,13 +2,10 @@ steps:
 
   - label: "Echo meta evm_loader_branch"
     commands:
-      - echo evm_loader_branch - $(buildkite-agent meta-data get "full_test_suite" --job ${NEON_EVM_JOB_ID} --default "false")
-      - echo BUILDKITE_JOB_ID - ${BUILDKITE_JOB_ID}
-      - echo BUILDKITE_TRIGGERED_FROM_BUILD_ID - ${BUILDKITE_TRIGGERED_FROM_BUILD_ID}
-      - echo NEON_EVM_JOB_ID - ${NEON_EVM_JOB_ID}
+      - echo FULL_TEST_SUITE - $(FULL_TEST_SUITE)
     agents:
       queue: "testing"
-#
+
 #  - label: "Check if the full test suite should be processed"
 #    key: "to-substitute-label"
 #    if: |
@@ -16,10 +13,10 @@ steps:
 #        || $(buildkite-agent meta-data get "full_test_suite" --job ${NEON_EVM_JOB_ID}) == "true"
 #    commands:
 #      - echo processing full test suite MYENV -  ${MYENV}
-
-  - label: "Echo env FULL_TEST_SUITE"
-    commands:
-      - echo "full_test_suite:" ${FULL_TEST_SUITE} -
-      - echo BUILDKITE_JOB_ID - ${BUILDKITE_JOB_ID}
-    agents:
-      queue: "testing"
+#
+#  - label: "Echo env FULL_TEST_SUITE"
+#    commands:
+#      - echo "full_test_suite:" ${FULL_TEST_SUITE} -
+#      - echo BUILDKITE_JOB_ID - ${BUILDKITE_JOB_ID}
+#    agents:
+#      queue: "testing"
