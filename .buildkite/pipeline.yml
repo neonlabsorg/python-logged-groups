@@ -5,12 +5,11 @@ steps:
 #      queue: "testing"
 
   - label: "Example Test 1"
-    command: echo "full_test_suite:" $(buildkite-agent meta-data get "full_test_suite" --default "false")
+    command: echo evm_loader_branch - $(buildkite-agent meta-data get "evm_loader_branch" --default "false")
     agents:
       queue: "testing"
 
   - label: "Example Test 2"
     command: echo "full_test_suite:" ${FULL_TEST_SUITE}
-    priority: 3
     agents:
       queue: "testing"
