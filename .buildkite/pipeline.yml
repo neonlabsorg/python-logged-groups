@@ -11,7 +11,9 @@ steps:
   - label: "Check if the full test suite is to be run"
     key: "to-substitute-label"
     if: |
-        (build.pull_request.base_branch == "develop" && !build.pull_request.draft)
+        (build.pull_request.base_branch == "develop" && !build.pull_request.draft) ||
+        (build.source == "trigger_job" && build.env("EVM_LOADER_FULL_TEST_SUITE") == "true")
     commands:
       - echo "EVM_LOADER_FULL_TEST_SUITE:" ${EVM_LOADER_FULL_TEST_SUITE}
+      - echo "BUILDKITE_PULL_REQUEST:" ${BUILDKITE_PULL_REQUEST}
 
