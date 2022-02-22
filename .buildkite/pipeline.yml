@@ -2,7 +2,9 @@ steps:
 
   - label: "Echo meta evm_loader_branch"
     commands:
-      - echo FULL_TEST_SUITE - ${FULL_TEST_SUITE}
+      - echo EVM_LOADER_FULL_TEST_SUITE - ${EVM_LOADER_FULL_TEST_SUITE}
+      - echo EVM_LOADER_REVISION - ${EVM_LOADER_REVISION}
+      - echo EVM_LOADER_BRANCH - ${EVM_LOADER_BRANCH}
     agents:
       queue: "testing"
 
