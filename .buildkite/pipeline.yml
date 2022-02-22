@@ -8,6 +8,7 @@ steps:
     commands:
       - echo evm_loader_branch - $(buildkite-agent meta-data get "evm_loader_branch" --default "false")
       - echo BUILDKITE_JOB_ID - ${BUILDKITE_JOB_ID}
+      - echo BUILDKITE_TRIGGERED_FROM_BUILD_ID - ${BUILDKITE_TRIGGERED_FROM_BUILD_ID}
     agents:
       queue: "testing"
 
